@@ -1,14 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { StyleSheet, FlatList, View, SafeAreaView } from 'react-native';
+/* lib */
+import {getShelfs} from "./src/lib/firebase"
+/* components */
+import {BookReviewItem} from "./src/components/BookReviewItem"
+/* types */
+import { Shelf } from './src/types/shelf';
 
 export default function App() {
+  const [shelfs, setShelfs] = useState<Shelf[]>([]);
+  useEffect(() => {
+    getFirebaseItems();
+  },[]);
+
+  const getFirebaseItems = async() => {
+    const shelfs = await getShelfs()
+    setShelfs(shelfs)
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={shelfs}
+        renderItem={({ item }: { item: Shelf }) => (
+          <BookReviewItem shelf={item} />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+        /* 横２列、縦２列に */
+        numColumns={2} 
+      />
+    </SafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -19,3 +42,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
