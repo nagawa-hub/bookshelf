@@ -59,6 +59,13 @@ export const createReviewRef = async(bookId: string) => {
     .doc()
 }
 
+export const createShelfRef = async() => {
+  return await firebase
+    .firestore()
+    .collection("shelfs")
+    .doc()
+}
+
 export const uploadImage = async(uri: string, path: string) => {
   // uriをblob形式に変換
   const localUri = await fetch(uri);

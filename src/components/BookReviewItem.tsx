@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   image:{
     width: IMAGE_WIDTH,
-    height: IMAGE_WIDTH * 0.7,
+    height: IMAGE_WIDTH * 1,
   },
   nameText:{
     fontSize: 16,

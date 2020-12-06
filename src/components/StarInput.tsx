@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
     /* starを横並びに */
     flexDirection: "row",
     alignItems: "center",
-    margin: 8  
+    margin: 10  
   },
   star:{
     fontSize: 20,
-    color: "#800",
+    color: "#3bf",
     marginRight: 4
   },
 })

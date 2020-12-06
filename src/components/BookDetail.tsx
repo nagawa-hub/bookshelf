@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: "100%",
-    height: 250,
+    height: 300,
     resizeMode: "cover",
   },
   nameContainer: {
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 250,
+    height: 300,
     resizeMode: "cover"
   },
   name: {
@@ -75,6 +75,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: 250
+    height: 300
   }
 })

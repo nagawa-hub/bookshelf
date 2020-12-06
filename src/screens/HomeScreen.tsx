@@ -8,7 +8,6 @@ import {BookReviewItem} from "../components/BookReviewItem"
 import { Shelf } from '../types/shelf';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types/navigation';
-import { PlusButton } from '../components/PlusButton';
 
 // ホームスクリーンが受け取るPropsを定義
 type Props = {

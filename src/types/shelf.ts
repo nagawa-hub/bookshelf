@@ -4,5 +4,5 @@ export type Shelf = {
   author: string;
   score: number;
   imageUrl: string;
-  description: string;
+  description?: string;
 };

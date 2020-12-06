@@ -6,5 +6,6 @@ export type RootStackParamList = {
   Book: { book: Shelf };
   User: undefined;
   CreateReview: { book: Shelf};
+  CreateShelf: { book: Shelf};
   Main: undefined;
 }

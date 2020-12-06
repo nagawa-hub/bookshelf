@@ -52,5 +52,6 @@ const styles = StyleSheet.create({
   nameText: {
     color: "#888",
     fontSize: 12,
+    marginTop: 8
   },
 });

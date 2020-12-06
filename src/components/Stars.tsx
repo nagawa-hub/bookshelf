@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     marginTop: 8  
   },
   star:{
-    color: "#800",
+    color: "#3bf",
     marginRight: 4
   },
   scoreText:{

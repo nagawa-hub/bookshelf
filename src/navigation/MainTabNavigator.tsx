@@ -4,6 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 /* screen */
 import { HomeStackNavigator } from "./HomeStackNavigator"
 import { UserScreen } from "../screens/UserScreen";
+import { CreateShelfScreen } from "../screens/CreateShelfScreen"
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ export const MainTabNavigator = () => {
     <Tab.Navigator
       /* 色を変更 */
       tabBarOptions={{
-        activeTintColor: "#900",
+        activeTintColor: "#3bf",
         inactiveTintColor: "#999"
       }}
     >
@@ -25,6 +26,16 @@ export const MainTabNavigator = () => {
             <AntDesign name="home" color={color} size={26} />
           ),
         }} 
+      />
+      <Tab.Screen
+        name="CreateShelf" 
+        component={CreateShelfScreen}
+        options={{
+          tabBarLabel: 'Create',
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="upload" color={color} size={26} />
+          ),
+        }}
       />
       <Tab.Screen
         name="User" 
