@@ -1,6 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, Dimensions } from "react-native";
-/* conponents */
+import { View, StyleSheet, Image, Text, Dimensions, TouchableOpacity } from "react-native";
+/* components */
 import {Stars} from "./Stars"
 /* types */
 import { Shelf } from "../types/shelf";
@@ -14,17 +14,18 @@ const IMAGE_WIDTH = CONTAINER_WIDTH - PADDING * 2;
 
 type Props = {
   shelf: Shelf;
+  onPress: () => void;
 };
 
-export const BookReviewItem: React.FC<Props> = ({shelf}: Props) => {
+export const BookReviewItem: React.FC<Props> = ({shelf, onPress}: Props) => {
   const {name, author, imageUrl, score} = shelf;
   return(
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={{uri: imageUrl}} style={styles.image}/>
       <Text style={styles.nameText}>{name}</Text>
       <Text style={styles.authorText}>{author}</Text>
       <Stars score={score}/>
-    </View>
+    </TouchableOpacity>
   )
 };
 
